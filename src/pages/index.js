@@ -1,12 +1,14 @@
-import React from "react"
-import "../style.css";
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import Chart from '../components/issues-pr-chart'
-import TopIssues from '../components/top-issues'
-import TopAuthors from '../components/top-authors'
+import React from "react";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Chart from "../components/issues-pr-chart";
+import TopIssues from "../components/top-issues";
+import TopAuthors from "../components/top-authors";
+import Logo from "../components/logo";
+import SponsorLogo from "../components/sponsor-logo";
 
-import { searchIssuesAndPr } from '../utils/github'
+import { searchIssuesAndPr } from "../utils/github";
+
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -14,7 +16,7 @@ class IndexPage extends React.Component {
     this.state = {
       issues: [],
       pull_requests: []
-    }
+    };
   }
   async componentDidMount() {
     try {
@@ -22,9 +24,9 @@ class IndexPage extends React.Component {
       this.setState({
         issues,
         pull_requests
-      })
+      });
     } catch (e) {
-      console.log(e)
+      console.log(e);
     }
   }
 
@@ -32,16 +34,21 @@ class IndexPage extends React.Component {
     return (
       <Layout>
         <SEO title="Home" />
-        <div style={{display: 'flex', justifyContent: 'space-around'}}>
-          <Chart pull_requests={this.state.pull_requests} issues={this.state.issues}/>
+        <Logo />
+        <SponsorLogo />
+        <div style={{ display: "flex", justifyContent: "space-around" }}>
+          <Chart
+            pull_requests={this.state.pull_requests}
+            issues={this.state.issues}
+          />
           <div>
-            <TopAuthors pull_requests={this.state.pull_requests}/>
-            <TopIssues issues={this.state.issues}/>
+            <TopAuthors pull_requests={this.state.pull_requests} />
+            <TopIssues issues={this.state.issues} />
           </div>
         </div>
       </Layout>
-    )
+    );
   }
 }
 
-export default IndexPage
+export default IndexPage;
