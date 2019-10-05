@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Card } from "./card";
+import { H3 } from "./headings";
 
 const Img = styled.img`
   width: 40px;
@@ -11,9 +12,10 @@ const Img = styled.img`
 
 const TopAuthors = ({ pull_requests }) => (
   <Card>
-    <h3>Top Authors</h3>
+    <H3>Top Authors</H3>
     {pull_requests.map((value, index) => {
       // TODO group by user login
+      // TODO Limit top 5 authors
       const img = value.user.avatar_url;
       return (
         <a
