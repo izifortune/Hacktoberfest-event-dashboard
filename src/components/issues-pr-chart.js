@@ -4,13 +4,12 @@ import "chartjs-plugin-colorschemes";
 import { Card } from "./card";
 import { H3 } from "./headings";
 
-class IssuesAndPullRequests extends React.Component {
+class IssuesPrChart extends React.Component {
   constructor(props) {
     super(props);
   }
 
   componentDidUpdate() {
-    // TODO Filter issues open and closed
     this.myChart.data.datasets.forEach(el => {
       if (el.label === "PullRequests Open") {
         el.data = [
@@ -100,4 +99,4 @@ class IssuesAndPullRequests extends React.Component {
   }
 }
 
-export default IssuesAndPullRequests;
+export default IssuesPrChart;

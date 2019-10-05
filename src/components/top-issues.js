@@ -3,7 +3,7 @@ import { Card } from "./card";
 import { H3 } from "./headings";
 
 // TODO Empty state
-const IssuesList = ({ issues }) => (
+const TopIssues = ({ issues }) => (
   <Card>
     <H3>Unassigned Issues</H3>
     <p>use hacktoberfestDublin label</p>
@@ -22,4 +22,4 @@ const IssuesList = ({ issues }) => (
   </Card>
 );
 
-export default IssuesList;
+export default TopIssues;
