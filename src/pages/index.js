@@ -8,6 +8,8 @@ import TopAuthors from "../components/top-authors";
 import Logo from "../components/logo";
 import SponsorLogo from "../components/sponsor-logo";
 import { searchIssuesAndPr } from "../utils/github";
+import { tertiary } from "../vars";
+import { H2 } from '../components/headings';
 
 const HContainer = styled.div`
   display: flex;
@@ -20,6 +22,11 @@ const VContainer = styled.div`
   justify-content: space-between;
 `;
 
+const IndexH1 = styled.h1`
+  margin-top: 1.25rem;
+  color: ${tertiary};
+  text-align: center;
+`
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -45,9 +52,10 @@ class IndexPage extends React.Component {
     return (
       <Layout>
         <SEO title="Home" />
+        <IndexH1>HacktoberFest Dublin by</IndexH1>
         <HContainer style={{ alignItems: 'center', margin: '1.25rem 0' }}>
           <Logo />
-          <h2>and</h2> 
+          <H2 secondary>and</H2> 
           <SponsorLogo />
         </HContainer>
         <HContainer>
