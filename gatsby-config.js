@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: "/Hacktoberfest-event-dashboard",
   siteMetadata: {
     title: `Hacktoberfest Dublin`,
     description: ``,
