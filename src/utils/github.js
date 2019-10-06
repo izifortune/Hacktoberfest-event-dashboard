@@ -1,5 +1,4 @@
 const Octokit = require("@octokit/rest");
-const octokit = new Octokit();
 
 const groupItems = (items) =>
   items.reduce((acc, tally) => {
@@ -12,7 +11,7 @@ const groupItems = (items) =>
     issues: []
   });
 
-export const searchIssuesAndPr = () => octokit
+export const searchIssuesAndPr = () => new Octokit()
   .search.issuesAndPullRequests({
     q: 'label:hacktoberfestDublin'
   })
