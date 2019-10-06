@@ -9,7 +9,7 @@ import Logo from "../components/logo";
 import SponsorLogo from "../components/sponsor-logo";
 import { searchIssuesAndPr } from "../utils/github";
 import { tertiary } from "../vars";
-import { H2 } from '../components/headings';
+import { H2 } from "../components/headings";
 
 const HContainer = styled.div`
   display: flex;
@@ -26,7 +26,7 @@ const IndexH1 = styled.h1`
   margin-top: 1.25rem;
   color: ${tertiary};
   text-align: center;
-`
+`;
 
 class IndexPage extends React.Component {
   constructor(props) {
@@ -36,7 +36,8 @@ class IndexPage extends React.Component {
       pull_requests: []
     };
   }
-  async componentDidMount() {
+
+  async fetch() {
     try {
       const { issues, pull_requests } = await searchIssuesAndPr();
       this.setState({
@@ -48,14 +49,29 @@ class IndexPage extends React.Component {
     }
   }
 
+  refresh() {
+    return window.setInterval(async () => {
+      await this.fetch();
+    }, 60000);
+  }
+
+  async componentDidMount() {
+    await this.fetch();
+    this.interval = this.refresh();
+  }
+
+  componentWillUnmount() {
+    this.interval();
+  }
+
   render() {
     return (
       <Layout>
         <SEO title="Home" />
         <IndexH1>HacktoberFest Dublin by</IndexH1>
-        <HContainer style={{ alignItems: 'center', margin: '1.25rem 0' }}>
+        <HContainer style={{ alignItems: "center", margin: "1.25rem 0" }}>
           <Logo />
-          <H2 secondary>and</H2> 
+          <H2 secondary>and</H2>
           <SponsorLogo />
         </HContainer>
         <HContainer>
