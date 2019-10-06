@@ -5,10 +5,6 @@ import { Card } from "./card";
 import { H3 } from "./headings";
 
 class IssuesPrChart extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentDidUpdate() {
     this.myChart.data.datasets.forEach(el => {
       if (el.label === "PullRequests Open") {

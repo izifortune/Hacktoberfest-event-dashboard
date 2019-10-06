@@ -7,7 +7,6 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { useStaticQuery, graphql } from "gatsby";
 import "../style.css";
 import styled from 'styled-components';
 
@@ -16,19 +15,8 @@ const Footer = styled.footer`
 `
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
     <>
-      {/* <h1>{data.site.siteMetadata.title}</h1> */}
       <div
         style={{
           margin: `0 auto`,
