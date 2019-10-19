@@ -1,25 +1,25 @@
-import React from "react";
-import Chart from "chart.js";
-import "chartjs-plugin-colorschemes";
-import { Card } from "./card";
-import { H3 } from "./headings";
+import React from 'react';
+import Chart from 'chart.js';
+import 'chartjs-plugin-colorschemes';
+import { Card } from './card';
+import { H3 } from './headings';
 
 class IssuesPrChart extends React.Component {
   componentDidUpdate() {
     this.myChart.data.datasets.forEach(el => {
-      if (el.label === "PullRequests Open") {
+      if (el.label === 'PullRequests Open') {
         el.data = [
-          this.props.pull_requests.filter(pr => pr.state === "open").length
+          this.props.pull_requests.filter(pr => pr.state === 'open').length
         ];
-      } else if (el.label === "PullRequests Closed") {
+      } else if (el.label === 'PullRequests Closed') {
         el.data = [
-          this.props.pull_requests.filter(pr => pr.state === "closed").length
+          this.props.pull_requests.filter(pr => pr.state === 'closed').length
         ];
-      } else if (el.label === "Issues Open") {
-        el.data = [this.props.issues.filter(pr => pr.state === "open").length];
-      } else if (el.label === "Issues Closed") {
+      } else if (el.label === 'Issues Open') {
+        el.data = [this.props.issues.filter(pr => pr.state === 'open').length];
+      } else if (el.label === 'Issues Closed') {
         el.data = [
-          this.props.issues.filter(pr => pr.state === "closed").length
+          this.props.issues.filter(pr => pr.state === 'closed').length
         ];
       }
     });
@@ -27,23 +27,23 @@ class IssuesPrChart extends React.Component {
   }
 
   componentDidMount() {
-    var ctx = document.getElementById("pull_requests_open");
+    var ctx = document.getElementById('pull_requests_open');
     this.myChart = new Chart(ctx, {
-      type: "bar",
+      type: 'bar',
       data: {
-        labels: ["Count "],
+        labels: ['Count '],
         datasets: [
           {
-            label: "PullRequests Open"
+            label: 'PullRequests Open'
           },
           {
-            label: "PullRequests Closed"
+            label: 'PullRequests Closed'
           },
           {
-            label: "Issues Open"
+            label: 'Issues Open'
           },
           {
-            label: "Issues Closed"
+            label: 'Issues Closed'
           }
         ]
       },
@@ -51,30 +51,30 @@ class IssuesPrChart extends React.Component {
         legend: {
           display: true,
           labels: {
-            fontColor: "white",
-            fontFamily: "Space Mono",
+            fontColor: 'white',
+            fontFamily: 'Space Mono',
             fontSize: 14
           }
         },
         plugins: {
           colorschemes: {
-            scheme: "tableau.Tableau10"
+            scheme: 'tableau.Tableau10'
           }
         },
         scales: {
           yAxes: [
             {
               scaleLabel: {
-                fontFamily: "Space Mono",
+                fontFamily: 'Space Mono',
                 fontSize: 14,
-                fontColor: "white"
+                fontColor: 'white'
               },
               ticks: {
                 beginAtZero: true,
-                stepSize: 1,
-                fontFamily: "Space Mono",
+                stepSize: 2,
+                fontFamily: 'Space Mono',
                 fontSize: 14,
-                fontColor: "white"
+                fontColor: 'white'
               }
             }
           ]
@@ -87,8 +87,8 @@ class IssuesPrChart extends React.Component {
     return (
       <Card>
         <H3>Issues and PullRequests</H3>
-        <div style={{ width: "400px" }}>
-          <canvas id="pull_requests_open" width="400" height="400"></canvas>
+        <div style={{ width: '100%' }}>
+          <canvas id="pull_requests_open" width="300" height="300"></canvas>
         </div>
       </Card>
     );

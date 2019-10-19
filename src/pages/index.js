@@ -1,25 +1,28 @@
-import React from "react";
-import styled from "styled-components";
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-import Chart from "../components/issues-pr-chart";
-import TopIssues from "../components/top-issues";
-import TopAuthors from "../components/top-authors";
-import Logo from "../components/logo";
-import SponsorLogo from "../components/sponsor-logo";
-import { searchIssuesAndPr } from "../utils/github";
-import { tertiary } from "../vars";
-import { H2 } from "../components/headings";
+import React from 'react';
+import styled from 'styled-components';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import Chart from '../components/issues-pr-chart';
+import TopIssues from '../components/top-issues';
+import TopAuthors from '../components/top-authors';
+import Logo from '../components/logo';
+import SponsorLogo from '../components/sponsor-logo';
+import { searchIssuesAndPr } from '../utils/github';
+import { tertiary } from '../vars';
+import { H2 } from '../components/headings';
 
 const HContainer = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 `;
 
 const VContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 1.25rem;
+  min-width: 45%;
 `;
 
 const IndexH1 = styled.h1`
@@ -69,16 +72,19 @@ class IndexPage extends React.Component {
       <Layout>
         <SEO title="Home" />
         <IndexH1>HacktoberFest Dublin by</IndexH1>
-        <HContainer style={{ alignItems: "center", margin: "1.25rem 0" }}>
+        <HContainer style={{ alignItems: 'center', margin: '1.25rem 0' }}>
           <Logo />
           <H2 secondary>and</H2>
           <SponsorLogo />
         </HContainer>
         <HContainer>
-          <Chart
-            pull_requests={this.state.pull_requests}
-            issues={this.state.issues}
-          />
+          <VContainer>
+            <Chart
+              pull_requests={this.state.pull_requests}
+              issues={this.state.issues}
+            />
+          </VContainer>
+
           <VContainer>
             <TopAuthors pull_requests={this.state.pull_requests} />
             <TopIssues issues={this.state.issues} />
