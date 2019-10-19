@@ -325,7 +325,7 @@ hgroup {
   margin-bottom: 1.45rem;
 }
 ul {
-  margin-left: 1.45rem;
+  margin-left: 0.4rem;
   margin-right: 0;
   margin-top: 0;
   padding-bottom: 0;
@@ -502,6 +502,7 @@ th {
 }
 li {
   margin-bottom: calc(1.45rem / 2);
+  list-style-type: none;
 }
 ol li {
   padding-left: 0;
@@ -530,6 +531,23 @@ p *:last-child {
 }
 li > p {
   margin-bottom: calc(1.45rem / 2);
+}
+li a {
+  display: block;
+  padding: 5px 5px 5px 0.5em;
+  border-left: 10px solid #91e8fd;
+  border-right: 10px solid #182045;
+  background: linear-gradient(to right,#92eaff7a,#1921477a);
+  color: #fff;
+  text-decoration: none;
+  width: 100%;
+  } html>body #button li a {
+  width: auto;
+  } #button li a:hover {
+  color: #fff;
+}
+li a:hover{
+  color: #f2c103;
 }
 code {
   font-size: 0.85rem;
