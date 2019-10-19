@@ -5,6 +5,7 @@ import SEO from "../components/seo";
 import Chart from "../components/issues-pr-chart";
 import TopIssues from "../components/top-issues";
 import TopAuthors from "../components/top-authors";
+import Authors from "../components/authors";
 import Logo from "../components/logo";
 import SponsorLogo from "../components/sponsor-logo";
 import { searchIssuesAndPr } from "../utils/github";
@@ -20,6 +21,7 @@ const VContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-basis: 40%;
 `;
 
 const IndexH1 = styled.h1`
@@ -82,6 +84,7 @@ class IndexPage extends React.Component {
           <VContainer>
             <TopAuthors pull_requests={this.state.pull_requests} />
             <TopIssues issues={this.state.issues} />
+            <Authors authors={this.state.pull_requests} />
           </VContainer>
         </HContainer>
       </Layout>
