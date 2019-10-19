@@ -1,15 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import Chart from '../components/issues-pr-chart';
-import TopIssues from '../components/top-issues';
-import TopAuthors from '../components/top-authors';
-import Logo from '../components/logo';
-import SponsorLogo from '../components/sponsor-logo';
-import { searchIssuesAndPr } from '../utils/github';
-import { tertiary } from '../vars';
-import { H2 } from '../components/headings';
+import React from "react";
+import { graphql } from "gatsby";
+import styled from "styled-components";
+import Layout from "../components/layout";
+import SEO from "../components/seo";
+import Chart from "../components/issues-pr-chart";
+import TopIssues from "../components/top-issues";
+import TopAuthors from "../components/top-authors";
+import Logo from "../components/logo";
+import SponsorLogo from "../components/sponsor-logo";
+import { searchIssuesAndPr } from "../utils/github";
+import { tertiary } from "../vars";
+import { H2 } from "../components/headings";
 
 const HContainer = styled.div`
   display: flex;
@@ -71,8 +72,8 @@ class IndexPage extends React.Component {
     return (
       <Layout>
         <SEO title="Home" />
-        <IndexH1>HacktoberFest Dublin by</IndexH1>
-        <HContainer style={{ alignItems: 'center', margin: '1.25rem 0' }}>
+        <IndexH1>{this.props.data.site.siteMetadata.title} by</IndexH1>
+        <HContainer style={{ alignItems: "center", margin: "1.25rem 0" }}>
           <Logo />
           <H2 secondary>and</H2>
           <SponsorLogo />
@@ -94,5 +95,15 @@ class IndexPage extends React.Component {
     );
   }
 }
+
+export const query = graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+`
 
 export default IndexPage;
