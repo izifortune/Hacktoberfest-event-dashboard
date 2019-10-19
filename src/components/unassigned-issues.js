@@ -2,18 +2,15 @@ import React from "react";
 import { Card } from "./card";
 import { H3 } from "./headings";
 
-const MAX_DISPLAY_ISSUES = 10;
-// TODO Empty state
-const TopIssues = ({ issues }) => (
+const UnassignedIssues = ({ issues }) => (
     <Card>
         <H3>Unassigned Issues</H3>
-        <p>Use hacktoberfestDublin label</p>
+        <p>Use <bold>hacktoberfestDublin</bold> label</p>
         <ul>
             {
                 issues
                     .filter(el => el.assignee === null)
                     .filter(el => el.state !== 'closed')
-                    .slice(0, MAX_DISPLAY_ISSUES)
                     .map((value, index) => {
                         return (
                             <li key={index}>
@@ -23,9 +20,8 @@ const TopIssues = ({ issues }) => (
                     })
             }
         </ul>
-        <p><a href="/unassigned-issues">See all unassigned issues</a></p>
-
+        <p><a href="/">Return to the homepage</a></p>
     </Card>
 );
 
-export default TopIssues;
+export default UnassignedIssues;
