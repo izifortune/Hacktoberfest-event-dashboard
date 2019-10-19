@@ -7,7 +7,7 @@ const MAX_DISPLAY_ISSUES = 10;
 const TopIssues = ({ issues }) => (
     <Card>
         <H3>Unassigned Issues</H3>
-        <p>use hacktoberfestDublin label</p>
+        <p>Use hacktoberfestDublin label</p>
         <ul>
             {
                 issues
@@ -23,6 +23,8 @@ const TopIssues = ({ issues }) => (
                     })
             }
         </ul>
+        <p><a href="/unassigned-issues">See all unassigned issues</a></p>
+
     </Card>
 );
 
