@@ -1,4 +1,5 @@
 import React from "react";
+import { graphql } from "gatsby";
 import styled from "styled-components";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -14,7 +15,8 @@ import { H2 } from "../components/headings";
 
 const HContainer = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 `;
 
 const VContainer = styled.div`
@@ -22,6 +24,7 @@ const VContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   flex-basis: 40%;
+  margin: 1.25rem;
 `;
 
 const IndexH1 = styled.h1`
@@ -70,17 +73,20 @@ class IndexPage extends React.Component {
     return (
       <Layout>
         <SEO title="Home" />
-        <IndexH1>HacktoberFest Dublin by</IndexH1>
+        <IndexH1>{this.props.data.site.siteMetadata.title} by</IndexH1>
         <HContainer style={{ alignItems: "center", margin: "1.25rem 0" }}>
           <Logo />
           <H2 secondary>and</H2>
           <SponsorLogo />
         </HContainer>
         <HContainer>
-          <Chart
-            pull_requests={this.state.pull_requests}
-            issues={this.state.issues}
-          />
+          <VContainer>
+            <Chart
+              pull_requests={this.state.pull_requests}
+              issues={this.state.issues}
+            />
+          </VContainer>
+
           <VContainer>
             <TopAuthors pull_requests={this.state.pull_requests} />
             <TopIssues issues={this.state.issues} />
@@ -91,5 +97,15 @@ class IndexPage extends React.Component {
     );
   }
 }
+
+export const query = graphql`
+    query {
+      site {
+        siteMetadata {
+          title
+        }
+      }
+    }
+`
 
 export default IndexPage;
