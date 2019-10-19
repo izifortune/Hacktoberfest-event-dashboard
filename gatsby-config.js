@@ -1,10 +1,10 @@
 module.exports = {
   pathPrefix: "/Hacktoberfest-event-dashboard",
-  label: 'hacktoberfestDublin',
   siteMetadata: {
     title: `Hacktoberfest Dublin`,
     description: ``,
     author: `@izifortune`,
+    githubLabel: 'hacktoberfestDublin',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

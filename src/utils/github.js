@@ -15,7 +15,7 @@ const groupItems = (items) =>
 
 export const searchIssuesAndPr = () => new Octokit()
   .search.issuesAndPullRequests({
-    q: 'label:' + gatsbyConfig.label,
+    q: 'label:' + gatsbyConfig.siteMetadata.githubLabel,
   })
   .then(res => groupItems(res.data.items));
 
