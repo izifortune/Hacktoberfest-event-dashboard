@@ -1,44 +1,60 @@
-<!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">
-  <a href="https://www.gatsbyjs.org">
-    <img alt="Gatsby" src="https://www.gatsbyjs.org/monogram.svg" width="60" />
+  <a href="https://izifortune.github.io/Hacktoberfest-event-dashboard/">
+    <img alt="HacktoberFest 2019" src="https://hacktoberfest.digitalocean.com/assets/logo-hf19-header-8245176fe235ab5d942c7580778a914110fa06a23c3d55bf40e2d061809d8785.svg" width="500" />
+
+  <h1 align="center">
+    Dublin HacktoberFest 2019 Dashboard
+  </h1>
   </a>
+<h3 align="center">
+A Really cool Dashboard developed originally for the Dublin HacktoberFest.
+
+Extensible enough to be used for different purposes - BYOL [Bring Your Own Labels] 😉
+</h3>
 </p>
-<h1 align="center">
-  Gatsby's default starter
-</h1>
-
-Kick off your project with this default boilerplate. This starter ships with the main Gatsby configuration files you might need to get up and running blazing fast with the blazing fast app generator for React.
-
-_Have another more specific idea? You may want to check out our vibrant collection of [official and community-created starters](https://www.gatsbyjs.org/docs/gatsby-starters/)._
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+1.  **Check Prerequisites [Node, NPM & Gatsby]** 
 
-    Use the Gatsby CLI to create a new site, specifying the default starter.
+    1. Install/Update Node.js LTS @
+        https://nodejs.org
+    2. Install Gatsby CLI
+        ```
+        npm install -g gatsby-cli
+        ```
+    
+2.  **Fork, Clone & Dependencies [Fork, Clone & npm install]** 
+    
+    1. Fork the repo to you own Github alias
+    2. Clone the repo into a folder
+       ```
+       git clone https://github.com/<this-is-you>/Hacktoberfest-event-dashboard.git
+       ```
+    3. Navigate into your new `HacktoberFest-Event-Dashboard` folder
+       ```
+       cd HacktoberFest-Event-Dashboard
+       ```
+    4. Install NPM Dependencies
+       ```
+       npm install
+       ```
 
-    ```shell
-    # create a new Gatsby site using the default starter
-    gatsby new my-default-starter https://github.com/gatsbyjs/gatsby-starter-default
-    ```
-
-1.  **Start developing.**
+3.  **Start developing.**
 
     Navigate into your new site’s directory and start it up.
-
-    ```shell
-    cd my-default-starter/
-    gatsby develop
     ```
+    npm start
+    ```
+    If you run into any issues at this stage please review the prerequisites :point_up:
 
-1.  **Open the source code and start editing!**
+4.  **Open the source code and start editing!**
 
     Your site is now running at `http://localhost:8000`!
 
     _Note: You'll also see a second link: _`http://localhost:8000/___graphql`_. This is a tool you can use to experiment with querying your data. Learn more about using this tool in the [Gatsby tutorial](https://www.gatsbyjs.org/tutorial/part-five/#introducing-graphiql)._
 
-    Open the `my-default-starter` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
+    Open the `HacktoberFest-Event-Dashboard` directory in your code editor of choice and edit `src/pages/index.js`. Save your changes and the browser will update in real time!
 
 ## 🧐 What's inside?
 
@@ -81,17 +97,3 @@ A quick look at the top-level files and directories you'll see in a Gatsby proje
 11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
 12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
-
-## 💫 Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
-
-<!-- AUTO-GENERATED-CONTENT:END -->
