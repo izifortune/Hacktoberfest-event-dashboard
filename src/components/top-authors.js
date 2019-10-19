@@ -11,7 +11,7 @@ const Img = styled.img`
 `;
 
 const TopAuthors = ({ pull_requests }) => {
-  if (pull_requests != []) {
+  if (pull_requests !== []) {
     return (
       <Card>
         <H3>Top Authors</H3>

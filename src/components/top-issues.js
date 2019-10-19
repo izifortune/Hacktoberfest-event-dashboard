@@ -4,7 +4,7 @@ import { H3 } from './headings';
 
 // TODO Empty state
 const TopIssues = ({ issues }) => {
-  if (issues != []) {
+  if (issues !== []) {
     return (
       <Card>
         <H3>Unassigned Issues</H3>
